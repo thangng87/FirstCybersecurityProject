@@ -1,0 +1,52 @@
+---
+- name: Config ELK with Docker
+  hosts: elk
+  become: true
+  remote_user: ansible
+  tasks:
+    - name: docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+
+    - name: Install pip3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+#use apt module
+    - name: Install Docker python module
+      pip:
+        name: docker
+        state: present
+# Command module
+    - name: change vmap
+      command: sysctl -w vm.max_map_count=262144
+# use sysctl module
+
+    - ansible.posix.sysctl:
+       name: vm.max_map_count
+       value: '262144'
+       state: present
+       reload: yes
+#use docker container module
+    - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+
+#list the port ELK running
+        published_ports:
+         - 5601:5601
+         - 9200:9200
+         - 5044:5044
+    - name: Enable docker service
+      systemd:
+        name: docker
+        enabled: yes
+
+
