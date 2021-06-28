@@ -11,7 +11,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [filebeat-playbook](/Ansible/filebeat-playbook.yml)
   - [metricbeat-config](/Ansible/metricbeat-config.yml)
   - [metricbeat-playbook](/Ansible/metricbeat-playbook.yml)
-  - [Dvwa-Install][(/Ansible/pentest.yml)
+  - [Dvwa-Install](/Ansible/pentest.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -27,14 +27,14 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly _available_, in addition to restricting _access_ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+_ Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function   | IP Address | Operating System |
 |----------|----------  |------------|------------------|
@@ -49,8 +49,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the _Jump Box_ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Whitelisted IP addresses: is My Personal Public Ip Address
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
@@ -59,9 +59,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | My Public Ip         |
+| DVWA-VM1 | No                  |  10.1.0.4            |
+| DVWA-VM2 | No                  |  10.1.0.4            |
+| DVWA-VM3 | No                  |  10.1.0.4            |
+| ELK-Stack| No                  |  10.1.0.4            |
 
 ### Elk Configuration
 
