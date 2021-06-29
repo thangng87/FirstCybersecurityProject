@@ -92,7 +92,20 @@ The playbook implements the following tasks:
          state: present
     ```
   - Install Python
+    ```yaml
+        - name: Install pip3
+          apt:
+          force_apt_get: yes
+         name: python3-pip
+          state: present
+    ```
   - Install apt module (docker python module)
+    ```
+        - name: Install Docker python module
+        pip:
+        name: docker
+        state: present
+    ```
   - Change the size of memory 
   - Use system control to set the memory size everytime system restart
   - Download ELK container
