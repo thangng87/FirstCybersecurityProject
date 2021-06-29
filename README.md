@@ -80,16 +80,16 @@ The playbook implements the following tasks:
   - Install Docker
     ```bash
       - name: Config ELK with Docker
-  hosts: elk
-  become: true
-  remote_user: ansible
-  tasks:
-    - name: docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
+        hosts: elk
+        become: true
+        remote_user: ansible
+        tasks:
+       - name: docker.io
+        apt:
+          update_cache: yes
+          force_apt_get: yes
+          name: docker.io
+         state: present
     ```
   - Install Python
   - Install apt module (docker python module)
