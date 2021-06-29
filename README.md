@@ -78,6 +78,19 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 -  In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
   - Install Docker
+    ```bash
+      - name: Config ELK with Docker
+  hosts: elk
+  become: true
+  remote_user: ansible
+  tasks:
+    - name: docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+    ```
   - Install Python
   - Install apt module (docker python module)
   - Change the size of memory 
