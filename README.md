@@ -38,7 +38,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
   - Metricbeat records the usage of computer resources eg: CPU, RAM..
 
 The configuration details of each machine may be found below.
-_ Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 
 | Name     | Function   | IP Address | Operating System |
 |----------|----------  |------------|------------------|
@@ -77,24 +77,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 -  In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- Install Docker
-  - - name: Config ELK with Docker
-  hosts: elk
-  become: true
-  remote_user: ansible
-  tasks:
-    - name: docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
-- Install Python
-- Install apt module (docker python module)
-- Change the size of memory
-- Use system control to set the memory size everytime system restart
-- Download ELK container
-- List the port that ELK running and enable ELK service
+  - Install Docker
+  - Install Python
+  - Install apt module (docker python module)
+  - Change the size of memory 
+  - Use system control to set the memory size everytime system restart
+  - Download ELK container
+  - List the port that ELK running and enable ELK service
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![ELK Screenshot](/Images/ansible.JPG)
@@ -111,8 +100,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
-- Filebeat collect data from log file then forward to ELK stack server. Filebeat can show the log of SSH attemps or log-in data. Hence we can see if someone try to bruce force log in to our server.
-- Metricbeat collect data on the usage of components(CPU, RAM) in machines in our webservers. By looking at the data from Metricbeat, we can see which machine is using a lot of resources and it could be potential of malware.
+  - Filebeat collect data from log file then forward to ELK stack server. Filebeat can show the log of SSH attemps or log-in data. Hence we can see if someone try to bruce force log in to our server.
+  - Metricbeat collect data on the usage of components(CPU, RAM) in machines in our webservers. By looking at the data from Metricbeat, we can see which machine is using a lot of resources and it could be potential of malware.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
