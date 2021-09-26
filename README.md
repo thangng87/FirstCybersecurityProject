@@ -6,7 +6,7 @@ The purpose of this project is:
 - Design network topology and setup network security rules, load balancer for the ELK stack server
 
 
-## Network Diagram
+### Network Diagram
 
 ![Network Diagram](/Images/Network%20Diagram.jpg) 
 
