@@ -6,7 +6,9 @@ The purpose of this project is:
 - Design network topology and setup network security rules, load balancer for the ELK stack server
 
 
-[Network Diagram](/Images/Network%20Diagram.jpg) 
+## Network Diagram
+
+![Network Diagram](/Images/Network%20Diagram.jpg) 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml file may be used to install only certain pieces of it, such as Filebeat.
 
