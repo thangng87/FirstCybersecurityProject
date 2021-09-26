@@ -1,6 +1,10 @@
 ## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
+The purpose of this project is:
+- Configure an ELK stack server in order to setup a cloud monitoring system using Microsoft Azure Platform
+- Deploy Virtual Machines, Docker containers using Ansible. 
+- Design network topology and setup network security rules, load balancer for the ELK stack server
+
 
 ![Network Diagram](/Images/Network%20Diagram.jpg) 
 
@@ -166,7 +170,7 @@ SSH into the control node and follow the steps below:
 - Update the _host_ file to include the machines inside a specific group that we want to install the playbook on
 - Run the playbook, and navigate to _targeted machines(DVWA-VM1 or ELK server)_ to check that the installation worked as expected.
 
- Answer the following questions to fill in the blanks:
+ Answer the following questions
 - Which file is the playbook? Where do you copy it?
   - YAML(Yet Another Markup Language) files are playbook file. We copy playbook files to /etc/ansible/ directory on ansible node 
 - Which file do you update to make Ansible run the playbook on a specific machine? We updated hosts file from /etc/ansible/ 
